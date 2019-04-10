@@ -78,6 +78,6 @@ public class UI extends PApplet {
 
 	// method for returning a colour associated with value parameter
 	public Color findColor(int value) {
-		
+
 	}
 }
