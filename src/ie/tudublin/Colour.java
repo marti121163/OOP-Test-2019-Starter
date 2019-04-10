@@ -10,12 +10,12 @@ public class Colour {
     public int TableRow;
 
     // table for colours
-    public Colour(TableRow row) {
-        colour = row.getString("Colour");
-        r = row.getInt("r");
-        g = row.getFloat("g");
-        b = row.getFloat("b");
-        value = row.getFloat("value");
+    public Color(TableRow row) {
+        this.colour = row.getString("Colour");
+        this.r = row.getInt("r");
+        this.g = row.getInt("g");
+        this.b = row.getInt("b");
+        this.value = row.getInt("value");
     }
 
 

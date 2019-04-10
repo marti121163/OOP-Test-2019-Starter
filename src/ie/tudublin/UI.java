@@ -1,7 +1,10 @@
 package ie.tudublin;
 
 import processing.core.PApplet;
+import processing.data.Table;
+import processing.data.TableRow;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class UI extends PApplet {
@@ -29,18 +32,19 @@ public class UI extends PApplet {
 	}
 
 	public void draw() {
+		background(0);
 	}
 
 	// this is my array list of colours
 	public class colours {
-		private ArrayList<String> colours = new ArrayList<>();
+		private ArrayList<Colour> colours = new ArrayList<>();
 	}
 
 	// resistors array list
 	public class resistors {
-		private ArrayList<String> resistors = new ArrayList<>();
+		private ArrayList<Resistor> resistors = new ArrayList<>();
 	}
-
+//
 //	// function for loading in the table
 //	public void loadColours() {
 //		//
@@ -61,34 +65,32 @@ public class UI extends PApplet {
 //		}
 //	}
 
+	// 2nd attempt at the function for loading in the table
+	public void loadColours() {
+		Table table = loadTable("colours.csv", "header");
 
-//	public void loadColours() {
-//		Table table = loadTable("colours.csv", "header");
-//
-//		for (int i = 0; i < table.getRowCount(); i++) {
-//			Colour s = new Colour(table.getRow(i));
-//
-//			Colour.add(s);
-//		}
-//	}
+		for(int i = 0 ; i < table.getRowCount() ; i ++) { TableRow row =
+         table.getRow(i); System.out.println(row.getString("Display Colour"));
+         System.out.println(row.getString("")); }
+		}
+	}
 
 
-//	// method for printing the contents of the array
-//	public void printColours() {
-//		System.out.println("you have " + colours.size() + " items in your list");
-//		for (int i = 0; i < colours.size(); i++) {
-//			System.out.println((i + 1) + ". " + colours.get(i));
-//		}
-//	}
+	// method for printing the contents of the array
+	public void printColours() {
+		System.out.println("you have " + colours.size() + " items in your list");
+		for (int i = 0; i < colours.size(); i++) {
+			System.out.println((i + 1) + ". " + colours.get(i));
+		}
+	}
 
 //	// method for returning a colour associated with value parameter
 //	public Color findColor(int value) {
-//		if(colours.contains(colour))
+//		if(colours.contains(colour)){
+//			return colour
+//		{else {
+//			return -1;
+//		}
 //	}
 //
-//	if(girls.contains(nameSearch)) {
-//		// Look for the data
-//	} else {
-//		// print error
-//	}
 }
