@@ -69,11 +69,13 @@ public class UI extends PApplet {
 	public void loadColours() {
 		Table table = loadTable("colours.csv", "header");
 
-		for(int i = 0 ; i < table.getRowCount() ; i ++) { TableRow row =
-         table.getRow(i); System.out.println(row.getString("Display Colour"));
-         System.out.println(row.getString("")); }
+		for(int i = 0 ; i < table.getRowCount() ; i ++) {
+		 TableRow row = table.getRow(i);
+		 System.out.println(row.getString("Display Colour"));
+         System.out.println(row.getString(""));
 		}
 	}
+}
 
 
 	// method for printing the contents of the array
