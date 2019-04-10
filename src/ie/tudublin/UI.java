@@ -1,15 +1,14 @@
 package ie.tudublin;
 
-import java.util.ArrayList;
-
 import processing.core.PApplet;
 import processing.data.Table;
-import processing.data.TableRow;
 
-public class UI extends PApplet
+import java.util.ArrayList;
 
-{	public void separate(int value)
-	{
+public class UI extends PApplet {
+
+	public void separate(int value) {
+
 		int hundreds = (value / 100);
 		int tens = (value - (hundreds * 100)) / 10;
 		int ones = value - ((hundreds * 100)  + (tens * 10));
@@ -18,8 +17,8 @@ public class UI extends PApplet
 		println(ones);
 	}
 
-	public void settings()
-	{
+	public void settings() {
+
 		size(500, 800);
 		
 		separate(381);
@@ -33,5 +32,23 @@ public class UI extends PApplet
 	
 	public void draw()
 	{			
+	}
+
+	// this is my array list of colours
+	public class colours {
+		private ArrayList<String> colours = new ArrayList<>();
+	}
+
+	public void loadColours() {
+		//
+		Table table = loadTable("colours.csv", "header");
+
+		for (int i = 0; i < table.getRowCount(); i++) {
+			// creates a new star
+			Star s = new Star(table.getRow(i));
+
+			// adds the star to the end of the stars array list
+			stars.add(s);
+		}
 	}
 }
